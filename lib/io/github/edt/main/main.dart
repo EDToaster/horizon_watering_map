@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:watering_map/io/github/edt/main/map.dart';
-import 'package:watering_map/io/github/edt/restricted/restricted_resources.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong/latlong.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 void main() {
   runApp(new WateringApp());
 }
+
+final webview = new FlutterWebviewPlugin();
+
+//void _launch() async {
+//  const url = "https://www.google.ca";
+//  webview.onUrlChanged.listen((String url) {
+//    if (url.contains("hi")) webview.close();
+//  });
+//  webview.launch(url,
+//      rect: new Rect.fromLTWH(
+//          10.0, 10.0, MediaQuery.of(context).size.width, 300.0));
+//}
 
 class WateringApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -17,7 +27,7 @@ class WateringApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: themeColor,
       ),
-      home: new MapPage()
+      home: new MapPage(),
     );
   }
 }
@@ -26,6 +36,7 @@ class WateringApp extends StatelessWidget {
 // http://mcg.mbitson.com/
 // https://github.com/mbitson/mcg
 const int _greenPrimary = 0xFF6aa84f;
+
 const MaterialColor themeColor = const MaterialColor(
   _greenPrimary,
   const <int, Color>{
