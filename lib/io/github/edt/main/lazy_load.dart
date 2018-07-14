@@ -10,7 +10,6 @@ class LazyLoadedParameter<T> {
   }
 
   get content {
-    if (!this.isLoaded) return null;
     return _content;
   }
 
